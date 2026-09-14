@@ -52,7 +52,13 @@ flowchart LR
 
 ```text
 Data-Analysis/
-├── Numpy/             # High-performance tensor ops, memory alignment, linear algebra & array benchmarks
+├── Numpy/                             # High-performance tensor ops, linear algebra & matrix analytics
+│   ├── My Material/                   # Primary hands-on notebooks
+│   │   ├── arrays.ipynb               # Creation, generation (zeros, ones, linspace, random), attributes & reductions
+│   │   ├── array_indexing.ipynb       # 1D/2D slicing, sub-matrix extraction, and boolean masking
+│   │   ├── array_operations.ipynb     # Exponentiation, scalar broadcasting, view vs copy, matrix dot (@), vstack/hstack/vsplit
+│   │   └── exersises.ipynb            # Valid Sudoku matrix & Student Performance multi-condition matrix analytics
+│   └── Reference material/            # Benchmark notebooks & reference projects
 ├── Pandas/            # Production data wrangling, missing data imputation, feature extraction & capstone projects
 ├── Matplotlib/        # Low-level canvas architecture, categorical/matrix plots & sports analytics capstone
 ├── Seaborn/           # Statistical inference visualizations, pair grids, distribution modeling & heatmaps
@@ -74,16 +80,16 @@ Below is the comprehensive technical breakdown of the skills, algorithm implemen
 
 ### 1. NumPy – High-Performance Vectorized Computing
 
-*Focus: Multi-dimensional array structures, memory-aligned broadcasting, C-accelerated numeric operations, and linear algebra.*
+*Focus: Multi-dimensional array initialization, vector/matrix slicing, element-wise arithmetic, linear algebra, memory management, array manipulation, and analytical problem-solving.*
 
-| Module Code | Core Concept / Topic Mastered | Technical Implementation & Engineering Details |
-| :---: | :--- | :--- |
-| `NUM-101` | Environment & Architecture | Notebook setup, NumPy engine architecture, contiguous C-memory alignment |
-| `NUM-102` | Array Data Structures | 1D vectors, 2D matrices, N-dimensional arrays (`ndarray`), dtype selection |
-| `NUM-103` | Indexing & Array Slicing | Basic slicing, multi-axis indexing, boolean masking, fancy indexing |
-| `NUM-104` | Vectorized Array Operations | Element-wise arithmetic, matrix dot products, broadcasting rules, universal functions (`ufuncs`) |
-| `NUM-105` | Numerical Aggregations | Fast axis-wise reductions (`sum`, `mean`, `std`, `var`, `min`, `max`, `argmin`, `argmax`) |
-| `NUM-106` | Applied Benchmarks | Hands-on computational exercises, matrix transformation algorithms, performance testing |
+#### 📁 Notebook Implementation & Competency Breakdown
+
+| Notebook File | Module Code | Technical Focus & Core Concepts Mastered | Key Methods, Functions & Algorithms Implemented |
+| :--- | :---: | :--- | :--- |
+| **[arrays.ipynb](file:///Users/ronitmexson/Downloads/Coding/Youtube/git-demo/Data%20Analysis/Data-Analysis/Numpy/My%20Material/arrays.ipynb)** | `NUM-101` | **Array Creation, Generation & Attributes** | • `np.array()` initialization & type coercion (`dtype='<U32'`)<br>• Dimensional hierarchy: 1D Vectors, 2D Matrices, 3D+ Tensors<br>• Generation: `np.arange()`, `np.zeros()`, `np.ones()`, `np.linspace()`<br>• Random routines: `np.random.rand()`, `np.random.randn()`, `np.random.randint()`<br>• Attributes: `.shape`, `.size`, `.dtype`<br>• Reductions: `.min()`, `.max()`, `.sum()`, `axis`-wise sums (`axis=0`, `axis=1`), `.mean()`, `.std()`, `.argmax()`, `.argmin()`<br>• Reshaping: `arr.reshape(rows, cols)` |
+| **[array_indexing.ipynb](file:///Users/ronitmexson/Downloads/Coding/Youtube/git-demo/Data%20Analysis/Data-Analysis/Numpy/My%20Material/array_indexing.ipynb)** | `NUM-102` | **Indexing, Slicing & Boolean Masking** | • 1D Vector slicing (`arr[1:5]`, step slicing `arr[1:9:2]`)<br>• 2D Matrix coordinate lookup (`arr[row, col]`) & row extraction<br>• 2D Sub-matrix slicing (`arr[0:2, 1:4]`, `arr[3:, 3:]`, column slicing `arr[:, 2]`)<br>• Boolean Indexing & Conditional Masking: generating boolean masks (`arr % 2 == 0`) and filtering arrays (`arr[bool_index]`) |
+| **[array_operations.ipynb](file:///Users/ronitmexson/Downloads/Coding/Youtube/git-demo/Data%20Analysis/Data-Analysis/Numpy/My%20Material/array_operations.ipynb)** | `NUM-103` | **Operations, Broadcasting, Copying & Stacking** | • Vector arithmetic & exponentiation (`a1 ** a2`)<br>• Scalar Broadcasting across 1D vectors (`arr + 10`) & 2D matrices (`arr2 + 10`)<br>• View vs Copy: Deep reference assignment (`b = a`) vs Shallow copy (`b = a.copy()`)<br>• Linear Algebra: Matrix multiplication (`mat1 @ mat2`) & Transposition (`mat.T`)<br>• Advanced Stacking: `np.vstack()`, `np.hstack()`, `np.column_stack()`<br>• Array Splitting: `np.hsplit()`, `np.vsplit()` |
+| **[exersises.ipynb](file:///Users/ronitmexson/Downloads/Coding/Youtube/git-demo/Data%20Analysis/Data-Analysis/Numpy/My%20Material/exersises.ipynb)** | `NUM-104` | **Applied Problem Solving & Matrix Analytics** | • **Valid Sudoku Matrix**: $9 \times 9$ matrix structure verification<br>• **Student Performance Analytics System**: 5-student $\times$ 3-attribute matrix `[Age, Math, Science]`<br>• Column extraction (`data[:, 1]`), peak filtering (`np.max()`), row querying (`data[data[:,1] > 90]`)<br>• Scalar score adjustments (`data[:, 1] += 5`) & multi-subject means<br>• Logical AND filtering (`(cond1) & (cond2)`) & threshold replacements (`data[data[:, 2] < 75, 2] = 0`) |
 
 ---
 
